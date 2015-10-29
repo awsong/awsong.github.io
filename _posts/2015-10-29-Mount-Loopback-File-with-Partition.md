@@ -23,8 +23,9 @@ I searched online and found the solution [here](http://www.andremiller.net/conte
 But the solution is not elegant/convenient. I recall that partprobe can re-read partion table and update kernel after you alter your partition. Why not give it a try.
 
 And it works! Here is how:
-```sh
+```
 losetup /dev/loop0 jessie-rpi2-20150705.img
 partprobe /dev/loop0
 ```
+
 And that's it. Your new parttion to mount will be /dev/loop0px where x is the partion number within the disk image. 
